@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Login from './components/Login';
 import ChatScreen from './components/ChatScreen';
 import { Route } from 'react-router-dom';
+import './App.css'
 
 export default class App extends Component {
 
@@ -19,7 +20,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <NavBar user={this.state.user}/>
+        <NavBar user={this.state.user} setUser={this.setUser}/>
 
         <Route 
           exact path='/' 

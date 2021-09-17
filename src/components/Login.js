@@ -8,22 +8,22 @@ export default class Login extends Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
         this.props.history.push('/chat')
     }
 
     render() {
         return (
-            <div>
+            <div className='login-box'>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='username'>Please type your name</label>
-                    <input 
+                    <label htmlFor='username'>Please type your Name</label>
+                    <input
                         type='text'
                         name='username'
                         onChange={this.handleChange}
                         required
                     />
-                    <button type='submit'>Enter to the Chat!</button>
+                    <button id='login-bttn' type='submit'>Enter to the chat!</button>
                 </form>
             </div>
         )

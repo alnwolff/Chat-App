@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
+
+    handleLogout = () => {
+        this.props.setUser('');
+        console.log(this.props.location.pathname);
+    }
+
     render() {
         return (
-            <section>
-                <p>Chat App!</p>
+            <section className='header'>
+                <p id='logo'>Chat App!</p>
+                {this.props.location.pathname === '/chat' ? 
+                    <Link to='/' onClick={() => this.handleLogout()}><p className='logout'>Leave the Chat</p></Link> 
+                    : <></>
+                }
             </section>
         )
     }
 }
+
+export default withRouter(NavBar);
