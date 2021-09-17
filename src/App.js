@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
 import ChatScreen from './components/ChatScreen';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import './App.css'
 
 export default class App extends Component {
@@ -29,7 +29,9 @@ export default class App extends Component {
 
         <Route 
           exact path='/chat'
-          render={props => <ChatScreen {...props} />}
+          render={props => {
+            return this.state.user ? <ChatScreen {...props}/> : <Redirect to='/'/>
+          }}
         />
       </>
     )
