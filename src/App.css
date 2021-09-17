@@ -69,3 +69,12 @@ a {
   border: none;
   padding: 7px;
 }
+
+.chat-container {
+  height: 94.4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow-y: scroll;
+}
