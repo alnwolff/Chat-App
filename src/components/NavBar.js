@@ -6,7 +6,6 @@ class NavBar extends Component {
 
     handleLogout = () => {
         this.props.setUser('');
-        console.log(this.props.location.pathname);
     }
 
     render() {
