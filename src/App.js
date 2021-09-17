@@ -6,14 +6,24 @@ import { Route } from 'react-router-dom';
 
 export default class App extends Component {
 
+  state = {
+    user: ''
+  }
+
+  setUser = user => {
+    this.setState({
+      user: user
+    })
+  }
+
   render() {
     return (
       <>
-        <NavBar/>
+        <NavBar user={this.state.user}/>
 
         <Route 
           exact path='/' 
-          render={props => <Login {...props}/>}
+          render={props => <Login user={this.state.user} setUser={this.setUser} {...props}/>}
         />
 
         <Route 
