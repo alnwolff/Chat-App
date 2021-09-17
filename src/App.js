@@ -30,7 +30,7 @@ export default class App extends Component {
         <Route 
           exact path='/chat'
           render={props => {
-            return this.state.user ? <ChatScreen {...props}/> : <Redirect to='/'/>
+            return this.state.user ? <ChatScreen user={this.state.user} {...props}/> : <Redirect to='/'/>
           }}
         />
       </>
