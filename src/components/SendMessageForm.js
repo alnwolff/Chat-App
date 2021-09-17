@@ -36,7 +36,7 @@ export default class SendMessageForm extends Component {
 
     render() {
         return (
-            <div>
+            <div id='form-container'>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type= 'text'
