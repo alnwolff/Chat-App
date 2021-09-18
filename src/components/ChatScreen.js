@@ -12,7 +12,6 @@ export default class ChatScreen extends Component {
     getMessages = () => {
         axios.get(`https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0?token=${process.env.REACT_APP_API_KEY}`)
             .then(response => {
-                console.log(response)
                 this.setState({
                     messages: response.data
                 })
@@ -26,8 +25,11 @@ export default class ChatScreen extends Component {
     render() {
         return (
             <div className='chat-container'>
+
                 <MessageList user={this.props.user} messages={this.state.messages}/>
+
                 <SendMessageForm user={this.props.user} getMessages={this.getMessages} />
+
             </div>
         )
     }

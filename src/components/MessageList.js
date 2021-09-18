@@ -20,7 +20,6 @@ export default class MessageList extends Component {
 
     getLast10 = messages => {
         const last10 = messages.slice(-10)
-        console.log({last10})
         this.setState({
             last10: last10
         })
@@ -32,7 +31,6 @@ export default class MessageList extends Component {
 
     componentDidMount() {
         this.getLast10(this.props.messages)
-        console.log(this.state.last10)
     }
 
     componentDidUpdate(prevProps) {

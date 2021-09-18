@@ -17,12 +17,14 @@ export default class Login extends Component {
             <div className='login-box'>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='username'>Please type your Name</label>
+
                     <input
                         type='text'
                         name='username'
                         onChange={this.handleChange}
                         required
                     />
+                    
                     <button id='login-bttn' type='submit'>Enter to the chat!</button>
                 </form>
             </div>

@@ -42,6 +42,7 @@ export default class SendMessageForm extends Component {
         return (
             <div id='form-container'>
                 <form onSubmit={this.handleSubmit}>
+
                     <input
                         type= 'text'
                         name= 'new-message'
@@ -50,7 +51,9 @@ export default class SendMessageForm extends Component {
                         placeholder='Message'
                         onChange= {this.handleChange}
                     />
+
                     <button type='submit'>Send</button>
+                    
                 </form>
             </div>
         )

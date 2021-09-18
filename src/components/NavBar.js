@@ -11,11 +11,14 @@ class NavBar extends Component {
     render() {
         return (
             <section className='header'>
+
                 <p id='logo'>Chat App!</p>
+                
                 {this.props.location.pathname === '/chat' ? 
                     <Link to='/' onClick={() => this.handleLogout()}><p>Leave the Chat</p></Link> 
                     : <></>
                 }
+
             </section>
         )
     }
