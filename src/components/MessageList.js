@@ -14,6 +14,14 @@ export default class MessageList extends Component {
         return time;
     }
 
+    scrollToBottom = () => {
+        this.messagesEnd.scrollIntoView();
+      }
+      
+      componentDidUpdate() {
+        this.scrollToBottom();
+      }
+
     render() {
         return (
             <ul className='message-box'>
@@ -36,6 +44,9 @@ export default class MessageList extends Component {
                                 </div>
                                 </div>
                             )}
+                            <div style={{ float:"left", clear: "both" }}
+                                ref={(el) => { this.messagesEnd = el; }}>
+                            </div>
                         </li>
                     )
                 })}

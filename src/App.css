@@ -12,6 +12,10 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #3898d3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 .header p {
@@ -71,12 +75,14 @@ a {
 }
 
 .chat-container {
-  height: 94.6vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   overflow-y: scroll;
+  margin-bottom: 60px;
+  margin-top: 44px;
 }
 
 .message-box {
@@ -132,6 +138,7 @@ a {
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 
 #form-container form {
