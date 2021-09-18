@@ -18,20 +18,24 @@ export default class SendMessageForm extends Component {
         const message = this.state.message;
         const author = this.props.user;
 
-        axios.post(
-            `https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0?token=${process.env.REACT_APP_API_KEY}`, 
-            {"message": message,"author": author}, 
-            {headers: {'Content-Type': 'application/json'}}
-            )
-            .then(response => {
-                this.props.getMessages()
-                this.setState({
-                    message: ''
+        if (message.length > 0 ){
+            axios.post(
+                `https://chatty.kubernetes.doodle-test.com/api/chatty/v1.0?token=${process.env.REACT_APP_API_KEY}`, 
+                {"message": message,"author": author}, 
+                {headers: {'Content-Type': 'application/json'}}
+                )
+                .then(response => {
+                    this.props.getMessages()
+                    this.setState({
+                        message: ''
+                    })
                 })
-            })
-            .catch(err => {
-                console.log(err)
-            })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+
+        
     }
 
     render() {

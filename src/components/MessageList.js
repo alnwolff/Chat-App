@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 
 export default class MessageList extends Component {
 
-    timeConverter = UNIX_timestamp => {
-        var a = new Date(UNIX_timestamp);
+    state = {
+        last10 : []
+    }
+
+    timeConverter = timestamp => {
+        var a = new Date(timestamp);
         var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         var year = a.getFullYear();
         var month = months[a.getMonth()];
@@ -14,25 +18,43 @@ export default class MessageList extends Component {
         return time;
     }
 
+    getLast10 = messages => {
+        const last10 = messages.slice(-10)
+        console.log({last10})
+        this.setState({
+            last10: last10
+        })
+    } 
+
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView();
-      }
-      
-      componentDidUpdate() {
-        this.scrollToBottom();
+    }
+
+    componentDidMount() {
+        this.getLast10(this.props.messages)
+        console.log(this.state.last10)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.messages !== prevProps.messages) {
+          this.getLast10(this.props.messages)
+        }
+        if (this.state.last10.length > 0) {
+                    this.scrollToBottom();
+                }
       }
 
     render() {
         return (
             <ul className='message-box'>
-                {this.props.messages.map((message) => {
+                {this.state.last10.map((message) => {
                     return (
                         <li key={message._id}>
                             {message.author === this.props.user ? (
                                 <div className='user-message'>
                                     <div>
                                         <p>{message.message}</p>
-                                        <p className='date'>{this.timeConverter(message.timestamp)}</p>
+                                        <p className='date right'>{this.timeConverter(message.timestamp)}</p>
                                     </div>
                                 </div>
                             ) : (

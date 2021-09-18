@@ -75,14 +75,14 @@ a {
 }
 
 .chat-container {
-  height: 95vh;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   overflow-y: scroll;
-  margin-bottom: 60px;
-  margin-top: 44px;
+  margin-bottom: 32px;
+  margin-top: 45px;
 }
 
 .message-box {
@@ -93,6 +93,7 @@ a {
   list-style-type: none;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  margin-bottom: 2%;
 }
 
 .user-message {
@@ -123,6 +124,11 @@ a {
 
 .date {
   color: #b4bdc2;
+  font-size: 0.9rem;
+}
+
+.right {
+  text-align: right;
 }
 
 #author {
@@ -184,6 +190,6 @@ a {
   }
   .user-message div,
   .others-message div {
-    max-width: 70%;
+    max-width: 60%;
   }
 }
