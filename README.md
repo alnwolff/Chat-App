@@ -1,13 +1,23 @@
 # Chat App
 
-## Available Scripts
+  This is a simple Chat application created using REACT.
 
-In the project directory, you can run:
+## How to run 
+This project was made to run locally, so for this you need to follow these steps:
 
-### `npm start`
+#### Repository
+Clone the repository and make sure you remember the path where it was cloned.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Node
+Before start, make sure you have Node installed. You can install Node [clicking here](https://nodejs.org/en/).
+After installing, access the project folder and run the command `npm install`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Run the app
+ In the project folder, run the command `npm start` and access [http://localhost:3000](http://localhost:3000) on your browser.
+
+## IMPORTANT NOTES
+
+This APP works with an API that requires a unique secret Token.
+For security reasons, the Token is not in the code, you'll need to create a .env in the project folder, and declare the variable `REACT_APP_API_KEY` and assign it with the Token as follows:
+
+```REACT_APP_API_KEY=<token>```
